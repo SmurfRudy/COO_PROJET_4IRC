@@ -7,7 +7,7 @@ package model;
  * @author francoise.perrin
  * Inspiration Jacques SARAYDARYAN, Adrien GUENARD*
  */
-public class Pion extends AbstractPiece  {
+public abstract class AbstractPion extends AbstractPiece  {
 
 	private boolean premierCoup;
 
@@ -16,7 +16,7 @@ public class Pion extends AbstractPiece  {
 	 * @param couleur_de_piece
 	 * @param coord
 	 */
-	public Pion(Couleur couleur_de_piece, Coord coord) {
+	public AbstractPion(Couleur couleur_de_piece, Coord coord) {
 		super(couleur_de_piece, coord);
 		this.premierCoup = true;
 	}
@@ -37,25 +37,18 @@ public class Pion extends AbstractPiece  {
 					&& (Math.abs(yFinal - this.getY()) <= 1 || 
 					(Math.abs(yFinal - this.getY()) <= 2 && this.premierCoup==true))) {
 
-				if ((Couleur.NOIR.equals(this.getCouleur()) && (yFinal - this.getY() > 0))
-						|| (Couleur.BLANC.equals(this.getCouleur()) 
-								&& (yFinal - this.getY() < 0))) {
-					ret = true;
-				}
+                                if (isMoveVertOk(yFinal))
+                                        ret = true;
 			}
 		}
 		// Déplacement diagonal
 		else {
+                        if (isMoveCatchOk(xFinal, yFinal))
+                                ret = true;
+                        // A deplacer
 			if (Couleur.NOIR.equals(this.getCouleur())) {
 				if ((yFinal == this.getY()+1 && xFinal == this.getX()+1) 
 						|| (yFinal == this.getY()+1 && xFinal == this.getX()-1)) {
-					ret = true;
-				}
-			}
-
-			if (Couleur.BLANC.equals(this.getCouleur())) {
-				if ((yFinal == this.getY()-1 && xFinal == this.getX()+1) 
-						|| (yFinal == this.getY()-1 && xFinal == this.getX()-1)) {
 					ret = true;
 				}
 			}	
@@ -63,6 +56,10 @@ public class Pion extends AbstractPiece  {
 
 		return ret;
 	}
+        
+        public abstract boolean isMoveVertOk(int yFinal);
+        
+        public abstract boolean isMoveCatchOk(int xFinal, int yFinal);
 
 
 
