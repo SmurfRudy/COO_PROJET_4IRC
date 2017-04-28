@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -381,10 +383,13 @@ public class Echiquier implements BoardGames {
 			e.switchJoueur();
 		
 		// ...
-	
 		
-	
-		
-		
+	}
+        public List<PieceIHMs> getPiecesIHM(){
+		List<PieceIHMs> piecesIHM = new ArrayList<PieceIHMs>();
+                piecesIHM.addAll(jeuBlanc.getPiecesIHM());
+                piecesIHM.addAll(jeuNoir.getPiecesIHM());
+                
+		return piecesIHM;
 	}
 }

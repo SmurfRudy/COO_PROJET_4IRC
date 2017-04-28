@@ -1,6 +1,7 @@
 package model;
 
 
+import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.List;
 
@@ -240,10 +241,13 @@ public class Jeu implements Game {
 
 	}
         
-        public list<PiecesIHMs> getPiecesIHM(){
-            
-            
-        }
+        public List<PieceIHMs> getPiecesIHM(){
+		List<PieceIHMs> piecesIHM = new ArrayList<PieceIHMs>();
+		for (Pieces piece: pieces) {
+			piecesIHM.add(new PieceIHM(piece));
+		}
+		return piecesIHM;
+	}
 	
 
 //		public static void main(String[] args) {
