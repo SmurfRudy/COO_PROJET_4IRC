@@ -1,6 +1,7 @@
 package model;
 
 
+import static java.util.Collections.list;
 import java.util.List;
 
 import tools.ChessPiecesFactory;
@@ -238,6 +239,11 @@ public class Jeu implements Game {
 		this.isCastling = true;
 
 	}
+        
+        public list<PiecesIHMs> getPiecesIHM(){
+            
+            
+        }
 	
 
 //		public static void main(String[] args) {
