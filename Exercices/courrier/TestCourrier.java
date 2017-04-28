@@ -1,3 +1,7 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 interface Contenu
 {
 	void encode(String texte);
@@ -28,12 +32,26 @@ class ContenuHtml implements Contenu
 	}
 }
 
-abstract class Courrier
+class Courrier
 {
 	protected Contenu contenu;
 	protected String destinataire;
+        protected Class contenuClass;
+        
+        public Courrier(Class contenuClass){
+            this.contenuClass = contenuClass;
+        }
 
-	abstract protected Contenu nouveauContenu();	// Factory Method
+	protected Contenu nouveauContenu(){
+            try {
+                Contenu contenu = (Contenu)contenuClass.newInstance();
+            } catch (InstantiationException ex) {
+                Logger.getLogger(Courrier.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(Courrier.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return contenu;
+        }
 
 	public void prepare(String destinataire, String texte)
 	{
@@ -49,30 +67,16 @@ abstract class Courrier
 	}
 }
 
-class CourrierTexte extends Courrier
-{
-	protected Contenu nouveauContenu()
-	{
-		return new ContenuTexte();
-	}
-}
-class CourrierHtml extends Courrier
-{
-	protected Contenu nouveauContenu()
-	{
-		return new ContenuHtml();
-	}
-}
 
 public class TestCourrier
 {
 
 	public static void main(String[] args)
 	{
-		CourrierHtml courrierHtml = new CourrierHtml();
+		Courrier courrierHtml = new Courrier(ContenuHtml.class);
 		courrierHtml.prepare("adresse1@domaine", "texte1");
 		System.out.println(courrierHtml);
-		CourrierTexte courrierTexte = new CourrierTexte();
+		Courrier courrierTexte = new Courrier(ContenuTexte.class);
 		courrierTexte.prepare("adresse2@domaine", "texte2");
 		System.out.println(courrierTexte);
 	}
