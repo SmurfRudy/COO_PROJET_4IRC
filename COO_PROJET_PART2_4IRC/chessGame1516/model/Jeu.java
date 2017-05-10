@@ -244,7 +244,9 @@ public class Jeu implements Game {
         public List<PieceIHMs> getPiecesIHM(){
 		List<PieceIHMs> piecesIHM = new ArrayList<PieceIHMs>();
 		for (Pieces piece: pieces) {
+                    if ((piece.getX()>(-1)) && (piece.getY()>(-1))){
 			piecesIHM.add(new PieceIHM(piece));
+                }
 		}
 		return piecesIHM;
 	}
