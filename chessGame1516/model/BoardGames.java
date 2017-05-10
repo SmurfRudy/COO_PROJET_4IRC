@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 
 /**
  * @author francoise.perrin
@@ -42,5 +44,7 @@ public interface BoardGames {
 	 * @return la couleur de la pièce sélectionnée
 	 */
 	public Couleur getPieceColor(int x, int y);
+
+    public List<Coord> getMovesOk(Coord initCoord);
  
 }

@@ -56,6 +56,11 @@ public class ChessGame extends Observable implements BoardGames{
     public Couleur getPieceColor(int x, int y) {
         return this.echiquier.getPieceColor(x, y);
     }   
+
+    @Override
+    public List<Coord> getMovesOk(Coord initCoord) {
+        return this.echiquier.getMovesOk(initCoord);
+    }
     
     
     

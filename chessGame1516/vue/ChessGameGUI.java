@@ -21,6 +21,7 @@ import model.Coord;
 import tools.ChessImageProvider;
 import tools.ChessPiecePos;
 import controler.ChessGameControlers;
+import java.util.List;
 import model.Observer;
 
 
@@ -214,7 +215,15 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 
 				// Mise en évidence des cases vers lesquelles 
 				// la pièce peut être déplacée 	
-				
+				List<Coord> movesOk = this.chessGameControler.getMovesOk(initCoord);
+                                for (Coord coord : movesOk) {
+                                    square = new JPanel( new BorderLayout() );
+                                    square.setBackground(new Color(255, 255, 102)); 
+                                    Coord squarePos = translateCoord(coord.x, coord.y);
+                                    JPanel panel = (JPanel) chessBoardGuiContainer.getComponent(coord.x + (coord.y*8));
+                                    panel.add(square);
+                                }
+                                this.chessBoardGuiContainer.repaint();
 				// ToDo
 			}
 		}

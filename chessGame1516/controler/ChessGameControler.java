@@ -6,6 +6,8 @@
 package controler;
 
 import controler.ChessGameControlers;
+import java.util.ArrayList;
+import java.util.List;
 import model.BoardGames;
 import model.Coord;
 
@@ -44,6 +46,11 @@ public class ChessGameControler implements ChessGameControlers{
     @Override
     public String toString(){
         return this.chessGame.toString();
+    }
+
+    @Override
+    public List<Coord> getMovesOk(Coord initCoord) {
+        return this.chessGame.getMovesOk(initCoord);
     }
     
 }

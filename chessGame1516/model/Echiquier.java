@@ -392,4 +392,16 @@ public class Echiquier implements BoardGames {
                 
 		return piecesIHM;
 	}
+
+        public List<Coord> getMovesOk(Coord initCoord) {
+            List<Coord> listCoordOk = new ArrayList();
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    if (isMoveOk(initCoord.x, initCoord.y, i, j)) {
+                        listCoordOk.add(new Coord(i, j));
+                    }
+                }
+            }
+            return listCoordOk;
+        }
 }
