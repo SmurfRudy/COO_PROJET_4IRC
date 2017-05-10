@@ -217,13 +217,8 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 				// la pièce peut être déplacée 	
 				List<Coord> movesOk = this.chessGameControler.getMovesOk(initCoord);
                                 for (Coord coord : movesOk) {
-                                    square = new JPanel( new BorderLayout() );
-                                    square.setBackground(new Color(255, 255, 102)); 
-                                    Coord squarePos = translateCoord(coord.x, coord.y);
-                                    JPanel panel = (JPanel) chessBoardGuiContainer.getComponent(coord.x + (coord.y*8));
-                                    panel.add(square);
+                                    chessBoardGuiContainer.getComponent(coord.x + (coord.y*8)).setBackground(new Color(255, 255, 102)); 
                                 }
-                                this.chessBoardGuiContainer.repaint();
 				// ToDo
 			}
 		}
