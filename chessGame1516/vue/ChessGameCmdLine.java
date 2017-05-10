@@ -56,12 +56,12 @@ public class ChessGameCmdLine implements Observer{
         System.out.println(chessGameControler.getMessage() + "\n");	
         LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
         System.out.print(pieces);
-        Iterator<PieceIHMs> piecesIterator = pieces.iterator();
         PieceIHMs piece = null;
         System.out.println("    0     1     2     3     4     5    6     7");
         for (int i = 0; i < 8; i++) {
             System.out.print("0 ");
             for (int j = 0; j < 8; j++) {
+                Iterator<PieceIHMs> piecesIterator = pieces.iterator();
                 boolean trouve = false;
                 while (piecesIterator.hasNext()) {
                     piece = piecesIterator.next();
