@@ -16,8 +16,15 @@ import java.util.List;
 public class ChessGame implements BoardGames{
     Echiquier echiquier;
     
+    ChessGameObserver observer;
+    
     public ChessGame(){
         this.echiquier = new Echiquier();
+    }
+    
+    @Override
+    public void setObserver(ChessGameObserver observer) {
+        this.observer = observer;
     }
     
     @Override
@@ -36,7 +43,7 @@ public class ChessGame implements BoardGames{
         if (this.echiquier.isMoveOk(xInit, yInit, xFinal, yFinal)){
             moveDone = this.echiquier.move(xInit, yInit, xFinal, yFinal);
             this.echiquier.switchJoueur();
-            update();
+            observer.update(echiquier.getPiecesIHM());
         }
         return moveDone;
     }
@@ -56,34 +63,7 @@ public class ChessGame implements BoardGames{
         return this.echiquier.getPieceColor(x, y);
     }
     
-    public void update(){
-        System.out.println(getMessage() + "\n");	
-        LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) this.echiquier.getPiecesIHM();
-        PieceIHMs piece = null;
-        System.out.println("    0     1     2     3     4     5    6     7");
-        for (int i = 0; i < 8; i++) {
-            System.out.print("0 ");
-            for (int j = 0; j < 8; j++) {
-                boolean trouve = false;
-                while (pieces.iterator().hasNext()) {
-                    piece = pieces.iterator().next();
-                    if ( piece.getX()==j && piece.getY()==i) {
-                        System.out.print(piece.getCouleur().toString().substring(0,1)+"_");
-                        System.out.print(piece.getNamePiece().substring(0, 2));
-                        trouve = true;
-                    }
-                }
-                if (!trouve) {
-                    System.out.print("____");
-                }
-                System.out.print("  ");
-            }
-            System.out.print("\n");
-            
-        }
-        
-        
-    }
+    
     
     
 }

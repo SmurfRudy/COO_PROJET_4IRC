@@ -13,6 +13,6 @@ import java.util.LinkedList;
  */
 public interface ChessGameObserver {
     
-    public void update(LinkedList<PieceIHMs> pieces);
+    public void update(Object o);
     
 }

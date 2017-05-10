@@ -4,6 +4,7 @@ import model.Coord;
 import controler.ChessGameControlers;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 import model.ChessGameObserver;
 import model.PieceIHMs;
@@ -51,8 +52,10 @@ public class ChessGameCmdLine implements ChessGameObserver{
 	}
         
         @Override
-        public void update(LinkedList<PieceIHMs> pieces){
+        public void update(Object o){
         System.out.println(chessGameControler.getMessage() + "\n");	
+        List<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
+        System.out.print(pieces);
         Iterator<PieceIHMs> piecesIterator = pieces.iterator();
         PieceIHMs piece = null;
         System.out.println("    0     1     2     3     4     5    6     7");
@@ -60,7 +63,7 @@ public class ChessGameCmdLine implements ChessGameObserver{
             System.out.print("0 ");
             for (int j = 0; j < 8; j++) {
                 boolean trouve = false;
-                
+                /*
                 while (piecesIterator.hasNext()) {
                     piece = piecesIterator.next();
                     if ( piece.getX()==j && piece.getY()==i) {
@@ -69,6 +72,7 @@ public class ChessGameCmdLine implements ChessGameObserver{
                         trouve = true;
                     }
                 }
+*/
                 if (!trouve) {
                     System.out.print("____");
                 }
