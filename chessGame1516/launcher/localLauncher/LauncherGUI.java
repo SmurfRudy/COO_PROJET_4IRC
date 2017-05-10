@@ -1,11 +1,14 @@
 package launcher.localLauncher;
 
+import controler.ChessGameControler;
 import java.awt.Dimension;
 import java.util.Observer;
 
 import javax.swing.JFrame;
 
 import controler.ChessGameControlers;
+import model.ChessGame;
+import vue.ChessGameGUI;
 
 
 
