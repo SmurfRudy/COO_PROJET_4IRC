@@ -4,6 +4,8 @@ import java.util.Observer;
 
 import vue.ChessGameCmdLine;
 import controler.ChessGameControlers;
+import controler.ChessGameControler;
+import model.ChessGame;
 
 
 

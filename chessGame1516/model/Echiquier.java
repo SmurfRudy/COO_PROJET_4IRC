@@ -386,7 +386,7 @@ public class Echiquier implements BoardGames {
 		
 	}
         public List<PieceIHMs> getPiecesIHM(){
-		List<PieceIHMs> piecesIHM = new ArrayList<PieceIHMs>();
+		List<PieceIHMs> piecesIHM = new LinkedList<PieceIHMs>();
                 piecesIHM.addAll(jeuBlanc.getPiecesIHM());
                 piecesIHM.addAll(jeuNoir.getPiecesIHM());
                 
