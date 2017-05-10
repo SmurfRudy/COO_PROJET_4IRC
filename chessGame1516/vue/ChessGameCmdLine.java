@@ -32,34 +32,28 @@ public class ChessGameCmdLine implements Observer{
 
 		System.out.print("\n Déplacement de 3,6 vers 3,4 :");
 		chessGameControler.move(new Coord(3,6), new Coord(3, 4));	// true
-		System.out.println(chessGameControler);
 		
 		System.out.print("\n Déplacement de 3,4 vers 3,6 :");		
 		chessGameControler.move(new Coord(3,4), new Coord(3, 6));	// false 
-		System.out.println(chessGameControler);
 		
 		System.out.print("\n Déplacement de 4,1 vers 4,3 :");
 		chessGameControler.move(new Coord(4, 1), new Coord(4, 3));	// true
-		System.out.println(chessGameControler);
 		
 		System.out.print("\n Déplacement de 3,4 vers 3,4 :");
 		chessGameControler.move(new Coord(3, 4), new Coord(3, 4));	// false	
-		System.out.println(chessGameControler);
 		
 		System.out.print("\n Déplacement de 3,4 vers 4,3 :");
 		chessGameControler.move(new Coord(3, 4), new Coord(4, 3));	// true	
-		System.out.println(chessGameControler);
 	}
         
         @Override
         public void update(Object o){
         System.out.println(chessGameControler.getMessage() + "\n");	
         LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
-        System.out.print(pieces);
         PieceIHMs piece = null;
         System.out.println("    0     1     2     3     4     5    6     7");
         for (int i = 0; i < 8; i++) {
-            System.out.print("0 ");
+            System.out.print(i+" ");
             for (int j = 0; j < 8; j++) {
                 Iterator<PieceIHMs> piecesIterator = pieces.iterator();
                 boolean trouve = false;

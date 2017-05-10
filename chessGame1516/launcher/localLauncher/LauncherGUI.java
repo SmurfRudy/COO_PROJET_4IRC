@@ -2,12 +2,12 @@ package launcher.localLauncher;
 
 import controler.ChessGameControler;
 import java.awt.Dimension;
-import java.util.Observer;
 
 import javax.swing.JFrame;
 
 import controler.ChessGameControlers;
 import model.ChessGame;
+import model.Observer;
 import vue.ChessGameGUI;
 
 
@@ -37,7 +37,7 @@ public class LauncherGUI {
 		chessGameControler = new ChessGameControler(chessGame);
 		
 		frame = new ChessGameGUI("Jeu d'échec", chessGameControler,  dim);
-		chessGame.addObserver((model.Observer) (Observer) frame);
+		chessGame.addObserver((Observer) frame);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocation(600, 10);

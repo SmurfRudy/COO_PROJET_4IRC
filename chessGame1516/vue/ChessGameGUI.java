@@ -21,6 +21,7 @@ import model.Coord;
 import tools.ChessImageProvider;
 import tools.ChessPiecePos;
 import controler.ChessGameControlers;
+import model.Observer;
 
 
 /**
@@ -33,7 +34,7 @@ import controler.ChessGameControlers;
  *  
  */
 
-public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionListener{
+public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionListener, Observer{
 
 	/**
 	 * 
@@ -297,5 +298,10 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 	public void mouseExited(MouseEvent e) {
 
 	}
+
+    @Override
+    public void update(Object o) {
+        
+    }
 
 }

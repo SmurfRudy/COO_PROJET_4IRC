@@ -38,7 +38,7 @@ public class ChessGameControler implements ChessGameControlers{
 
     @Override
     public boolean isPlayerOK(Coord initCoord) {
-        return false;
+        return chessGame.getColorCurrentPlayer().equals(chessGame.getPieceColor(initCoord.x, initCoord.y));
     }
     
     @Override
