@@ -5,14 +5,13 @@
  */
 package model;
 
-import java.util.LinkedList;
-
 /**
  *
  * @author Maxime
  */
-public interface ChessGameObserver {
+public interface Observable {
     
-    public void update(Object o);
+    
+        public void addObserver(Observer observer);
     
 }

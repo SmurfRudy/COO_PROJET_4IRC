@@ -6,8 +6,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-import model.ChessGameObserver;
 import model.PieceIHMs;
+import model.Observer;
 
 
 
@@ -18,7 +18,7 @@ import model.PieceIHMs;
  * Vue console d'un jeu d'échec
  * Cette classe est un observateur et le damier est mis à jour à chaque changement dans la classe métier
  */
-public class ChessGameCmdLine implements ChessGameObserver{
+public class ChessGameCmdLine implements Observer{
 
 	ChessGameControlers chessGameControler;
         
@@ -54,7 +54,7 @@ public class ChessGameCmdLine implements ChessGameObserver{
         @Override
         public void update(Object o){
         System.out.println(chessGameControler.getMessage() + "\n");	
-        List<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
+        LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
         System.out.print(pieces);
         Iterator<PieceIHMs> piecesIterator = pieces.iterator();
         PieceIHMs piece = null;
@@ -63,7 +63,6 @@ public class ChessGameCmdLine implements ChessGameObserver{
             System.out.print("0 ");
             for (int j = 0; j < 8; j++) {
                 boolean trouve = false;
-                /*
                 while (piecesIterator.hasNext()) {
                     piece = piecesIterator.next();
                     if ( piece.getX()==j && piece.getY()==i) {
@@ -72,7 +71,6 @@ public class ChessGameCmdLine implements ChessGameObserver{
                         trouve = true;
                     }
                 }
-*/
                 if (!trouve) {
                     System.out.print("____");
                 }

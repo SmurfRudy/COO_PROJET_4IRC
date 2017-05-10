@@ -13,18 +13,19 @@ import java.util.List;
  *
  * @author Rudy_DEAL
  */
-public class ChessGame implements BoardGames{
+public class ChessGame implements BoardGames, Observable{
     Echiquier echiquier;
     
-    ChessGameObserver observer;
+    List<Observer> observers;
     
     public ChessGame(){
         this.echiquier = new Echiquier();
+        this.observers = new LinkedList<>();
     }
     
     @Override
-    public void setObserver(ChessGameObserver observer) {
-        this.observer = observer;
+    public void addObserver(Observer observer) {
+        this.observers.add(observer);
     }
     
     @Override
@@ -43,7 +44,8 @@ public class ChessGame implements BoardGames{
         if (this.echiquier.isMoveOk(xInit, yInit, xFinal, yFinal)){
             moveDone = this.echiquier.move(xInit, yInit, xFinal, yFinal);
             this.echiquier.switchJoueur();
-            observer.update(echiquier.getPiecesIHM());
+            notifies(echiquier.getPiecesIHM());
+  //          observers.update(echiquier.getPiecesIHM());
         }
         return moveDone;
     }
@@ -61,6 +63,12 @@ public class ChessGame implements BoardGames{
     @Override
     public Couleur getPieceColor(int x, int y) {
         return this.echiquier.getPieceColor(x, y);
+    }
+
+    private void notifies(List<PieceIHMs> pieces) {
+        for (Observer observer : this.observers) {
+            observer.update(pieces);
+        }
     }
     
     

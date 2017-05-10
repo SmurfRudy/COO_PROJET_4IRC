@@ -42,7 +42,5 @@ public interface BoardGames {
 	 * @return la couleur de la pièce sélectionnée
 	 */
 	public Couleur getPieceColor(int x, int y);
-        
-        public void setObserver(ChessGameObserver observer);
  
 }
