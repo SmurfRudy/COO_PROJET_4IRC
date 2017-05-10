@@ -37,8 +37,8 @@ public class ChessGame extends Observable implements BoardGames{
         if (this.echiquier.isMoveOk(xInit, yInit, xFinal, yFinal)){
             moveDone = this.echiquier.move(xInit, yInit, xFinal, yFinal);
             this.echiquier.switchJoueur();
-            this.notifies(echiquier.getPiecesIHM());
         }
+        this.notifies(echiquier.getPiecesIHM());
         return moveDone;
     }
     
