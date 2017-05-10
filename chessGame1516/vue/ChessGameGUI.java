@@ -21,8 +21,11 @@ import model.Coord;
 import tools.ChessImageProvider;
 import tools.ChessPiecePos;
 import controler.ChessGameControlers;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import model.Observer;
+import model.PieceIHMs;
 
 
 /**
@@ -219,7 +222,6 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
                                 for (Coord coord : movesOk) {
                                     chessBoardGuiContainer.getComponent(coord.x + (coord.y*8)).setBackground(new Color(255, 255, 102)); 
                                 }
-				// ToDo
 			}
 		}
 	}
@@ -264,7 +266,7 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 			// des lors qu'il est modifie par l'invocation de la méthode move(),
 			// la vue en est avertie et
 			// sa methode update est appelee pour rafraichir l'affichage du damier
-
+                        
 
 		}
 	}
@@ -305,7 +307,25 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 
     @Override
     public void update(Object o) {
-        
+        this.layeredPane = new JLayeredPane();		
+        this.chessBoardGuiContainer = new JPanel();	
+        this.drawGrid();
+
+        // Ajout des écouteurs pour écouter les évènements souris
+        layeredPane.addMouseListener(this);
+        layeredPane.addMouseMotionListener(this);
+
+        LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
+        Iterator<PieceIHMs> piecesIterator = pieces.iterator();
+        PieceIHMs piece = null;
+        JLabel pieceImage;
+        JPanel panel;
+        while (piecesIterator.hasNext()) {
+            piece = piecesIterator.next();
+            pieceImage = new JLabel(new ImageIcon(ChessImageProvider.getImageFile(piece.getNamePiece(), piece.getCouleur())));
+            panel = (JPanel) chessBoardGuiContainer.getComponent(piece.getX() + (piece.getY() * 8));
+            panel.add(pieceImage);
+        }
     }
 
 }
