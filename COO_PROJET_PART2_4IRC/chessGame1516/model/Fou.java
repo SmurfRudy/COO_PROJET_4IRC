@@ -16,6 +16,8 @@ public class Fou extends AbstractPiece {
 	 */
 	public Fou(Couleur couleur_de_piece, Coord coord) {
 		super(couleur_de_piece, coord);
+                this.setMouvementByDefault(MouvementFou.getInstance());
+                this.setMouvement(MouvementFou.getInstance());
 	}
 
 	/* (non-Javadoc)
@@ -25,13 +27,7 @@ public class Fou extends AbstractPiece {
 	public boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
 			boolean isCastlingPossible) {
 		
-		boolean ret = false;
-		
-		if (Math.abs(yFinal - this.getY()) == Math.abs(xFinal - this.getX())) {
-			ret  = true;
-		}		
-		
-		return ret;
+		return this.getMouvement().isMoveOk(this.getX(), this.getY(), xFinal, yFinal, isCatchOk, isCastlingPossible, false);
 	}
 
 	

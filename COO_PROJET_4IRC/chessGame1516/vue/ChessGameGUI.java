@@ -127,7 +127,8 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 	private void drawGrid(){
 
 		JPanel square = null;
-
+                chessBoardGuiContainer.removeAll();
+                layeredPane.removeAll();
 		this.setContentPane(this.layeredPane);	
 		this.layeredPane.add(this.chessBoardGuiContainer, JLayeredPane.DEFAULT_LAYER);
 		this.chessBoardGuiContainer.setLayout( new GridLayout(8, 8) );
@@ -307,14 +308,8 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 
     @Override
     public void update(Object o) {
-        this.layeredPane = new JLayeredPane();		
-        this.chessBoardGuiContainer = new JPanel();	
+        
         this.drawGrid();
-
-        // Ajout des écouteurs pour écouter les évènements souris
-        layeredPane.addMouseListener(this);
-        layeredPane.addMouseMotionListener(this);
-
         LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
         Iterator<PieceIHMs> piecesIterator = pieces.iterator();
         PieceIHMs piece = null;

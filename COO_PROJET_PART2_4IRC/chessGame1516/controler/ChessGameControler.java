@@ -17,7 +17,7 @@ import model.Coord;
  */
 public class ChessGameControler implements ChessGameControlers{
     
-    BoardGames chessGame;
+    private BoardGames chessGame;
 
     public ChessGameControler(BoardGames model) {
         this.chessGame = model;
