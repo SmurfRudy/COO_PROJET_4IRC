@@ -11,8 +11,8 @@ package model;
  */
 public class PionBlanc extends AbstractPion{
 
-    public PionBlanc(Couleur couleur_de_piece, Coord coord) {
-        super(couleur_de_piece, coord);
+    public PionBlanc(Couleur couleur_de_piece, Coord coord, AbstractMouvementFactory factory) {
+        super(couleur_de_piece, coord, factory);
         this.setMouvementByDefault(MouvementPionBlanc.getInstance());
         //this.setMouvement(MouvementPionBlanc.getInstance());
         this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());

@@ -15,8 +15,8 @@ public class Tour extends AbstractPiece {
 	 * @param couleur_de_piece
 	 * @param coord
 	 */
-	public Tour(Couleur couleur_de_piece, Coord coord) {
-		super(couleur_de_piece, coord);
+	public Tour(Couleur couleur_de_piece, Coord coord, AbstractMouvementFactory factory) {
+		super(couleur_de_piece, coord, factory);
                 this.setMouvementByDefault(MouvementTour.getInstance());
                 //this.setMouvement(MouvementTour.getInstance());
                 this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());

@@ -16,8 +16,8 @@ public abstract class AbstractPion extends AbstractPiece  {
 	 * @param couleur_de_piece
 	 * @param coord
 	 */
-	public AbstractPion(Couleur couleur_de_piece, Coord coord) {
-		super(couleur_de_piece, coord);
+	public AbstractPion(Couleur couleur_de_piece, Coord coord, AbstractMouvementFactory factory) {
+		super(couleur_de_piece, coord, factory);
 		this.premierCoup = true;
 	}
 
@@ -28,7 +28,7 @@ public abstract class AbstractPion extends AbstractPiece  {
 	public boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
 			boolean isCastlingPossible) {
 	
-		return this.getMouvement().isMoveOk(this.getX(), this.getY(), xFinal, yFinal, isCatchOk, isCastlingPossible, this.premierCoup);
+		return getFactory().getMouvement().isMoveOk(this.getX(), this.getY(), xFinal, yFinal, isCatchOk, isCastlingPossible, this.premierCoup);
 	
 	}
 

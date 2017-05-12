@@ -9,6 +9,7 @@ import model.AbstractMouvementFactory;
 import model.Coord;
 import model.Couleur;
 import model.MouvementNormalFactory;
+import model.MouvementTempeteFactory;
 import model.Pieces;
 
 /**
@@ -20,17 +21,13 @@ import model.Pieces;
  *
  */
 public class ChessPiecesFactory {
-        
-    private Map<Integer, AbstractMouvementFactory> modes;
+    
+    private static Map<Integer, AbstractMouvementFactory> factoryMap = new HashMap<>();
 
 	/**
 	 * private pour ne pas instancier d'objets
 	 */
 	private ChessPiecesFactory() {
-            
-            modes =new HashMap();
-            modes.put(0,new MouvementNormalFactory());
-
 	}
 
 	/**
@@ -41,6 +38,8 @@ public class ChessPiecesFactory {
 
 		List<Pieces> pieces = null;
 		pieces = new LinkedList<Pieces>();
+                factoryMap.put(0,new MouvementNormalFactory());
+                factoryMap.put(1, new MouvementTempeteFactory());
 		
 		if (pieceCouleur != null){
 			for (int i = 0; i < ChessPiecePos.values().length; i++) {
@@ -50,7 +49,7 @@ public class ChessPiecesFactory {
 						String className = "model." + ChessPiecePos.values()[i].nom;	// attention au chemin
 						Coord pieceCoord = ChessPiecePos.values()[i].coords[j];
 						pieces.add((Pieces) Introspection.newInstance (className,
-								new Object[] {pieceCouleur, pieceCoord}));
+								new Object[] {pieceCouleur, pieceCoord, factoryMap.get(choice)}));
 					}
 				}
 			}
@@ -63,7 +62,7 @@ public class ChessPiecesFactory {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(ChessPiecesFactory.newPieces(Couleur.BLANC));
-		System.out.println(ChessPiecesFactory.newPieces(Couleur.NOIR));
+		System.out.println(ChessPiecesFactory.newPieces(Couleur.BLANC,0));
+		System.out.println(ChessPiecesFactory.newPieces(Couleur.NOIR,0));
 	}
 }

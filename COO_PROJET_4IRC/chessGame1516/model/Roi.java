@@ -13,8 +13,8 @@ public class Roi extends AbstractPiece {
 	 * @param couleur_de_piece
 	 * @param coord
 	 */
-	public Roi( Couleur couleur_de_piece, Coord coord) {
-		super(couleur_de_piece, coord);
+	public Roi( Couleur couleur_de_piece, Coord coord, AbstractMouvementFactory factory) {
+		super(couleur_de_piece, coord, factory);
                 this.setMouvementByDefault(MouvementRoi.getInstance());
                 //this.setMouvement(MouvementRoi.getInstance());
                 this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());

@@ -18,6 +18,11 @@ public abstract class AbstractPiece implements Pieces {
 	private Couleur couleur;
 	private Mouvement mouvementByDefault;
         private Mouvement mouvement;
+        private AbstractMouvementFactory factory;
+
+    public AbstractMouvementFactory getFactory() {
+        return factory;
+    }
         
     private Map<Integer,Mouvement> mouvementForModeTempete =new HashMap<>();
 
@@ -25,14 +30,6 @@ public abstract class AbstractPiece implements Pieces {
         return mouvementForModeTempete;
     }
     public void setMouvementForModeTempete() {
-        this.mouvementForModeTempete.put(0,MouvementTour.getInstance());
-        this.mouvementForModeTempete.put(1,MouvementCavalier.getInstance());
-        this.mouvementForModeTempete.put(2,MouvementFou.getInstance());
-        //this.mouvementForModeTempete.put(3,this.getMouvementByDefault());
-        //this.mouvementForModeTempete.put(4,this.getMouvementByDefault());
-        this.mouvementForModeTempete.put(5,MouvementFou.getInstance());
-        this.mouvementForModeTempete.put(6,MouvementCavalier.getInstance());
-        this.mouvementForModeTempete.put(7,MouvementTour.getInstance());
     }
 
         
@@ -59,10 +56,11 @@ public abstract class AbstractPiece implements Pieces {
 	 * @param couleur
 	 * @param coord
 	 */
-	public AbstractPiece(Couleur couleur, Coord coord){
+	public AbstractPiece(Couleur couleur, Coord coord, AbstractMouvementFactory factory){
 		this.x = coord.x;
 		this.y = coord.y;
 		this.couleur=couleur;
+                this.factory = factory;
                 setMouvementForModeTempete();
                 
 	}
@@ -105,7 +103,6 @@ public abstract class AbstractPiece implements Pieces {
 		if(Coord.coordonnees_valides(x,y)){
 			this.x=x;
 			this.y=y;
-                        setMouvement(this.mouvementForModeTempete.get(this.x));
 			ret = true;
 		}
 		return ret;
@@ -142,8 +139,10 @@ public abstract class AbstractPiece implements Pieces {
 	 * En fonction du type de pièce (Pion, etc.)
 	 * est capable de dire si le déplacement est OK
 	 */
-	public abstract boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
-			boolean isCastlingPossible) ;
+	public boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
+			boolean isCastlingPossible) {
+            return factory.getMouvement().isMoveOk(this.x, this.y, xFinal, yFinal, isCatchOk, isCastlingPossible, false);
+        }
 
 
 }

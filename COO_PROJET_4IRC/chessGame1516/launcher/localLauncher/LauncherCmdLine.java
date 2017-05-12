@@ -19,7 +19,7 @@ public class LauncherCmdLine {
 		ChessGameControlers controler;	
 		ChessGameCmdLine vue;
 		
-		model = new ChessGame();	
+		model = new ChessGame(0);	
 		controler = new ChessGameControler(model);
 		
 		new ChessGameCmdLine(controler);

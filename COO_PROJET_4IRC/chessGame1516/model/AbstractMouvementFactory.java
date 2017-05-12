@@ -10,5 +10,5 @@ package model;
  * @author Rudy_DEAL
  */
 public interface AbstractMouvementFactory {
-    
+    public Mouvement getMouvement();
 }

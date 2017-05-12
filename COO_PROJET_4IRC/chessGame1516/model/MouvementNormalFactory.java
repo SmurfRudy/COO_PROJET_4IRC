@@ -9,6 +9,26 @@ package model;
  *
  * @author Rudy_DEAL
  */
-public class MouvementNormalFactory {
+public class MouvementNormalFactory implements AbstractMouvementFactory{
+    
+    //private static MouvementNormalFactory instance;
+
+    public MouvementNormalFactory() {}
+    
+    /*
+    public MouvementNormalFactory getInstance() {
+        if (instance == null) {
+            instance = new MouvementNormalFactory();
+        }
+        return this.instance;
+    }*/
+    
+    
+    
+
+    @Override
+    public Mouvement getMouvement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
