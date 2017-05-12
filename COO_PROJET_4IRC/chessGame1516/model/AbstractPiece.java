@@ -13,7 +13,26 @@ public abstract class AbstractPiece implements Pieces {
 
 	private int x, y;
 	private Couleur couleur;
-	
+	private Mouvement mouvementByDefault;
+        private Mouvement mouvement;
+        
+
+    public Mouvement getMouvementByDefault() {
+        return mouvementByDefault;
+    }
+
+    public void setMouvementByDefault(Mouvement mouvementByDefault) {
+        this.mouvementByDefault = mouvementByDefault;
+    }
+
+    public Mouvement getMouvement() {
+        return mouvement;
+    }
+
+    public void setMouvement(Mouvement mouvement) {
+        this.mouvement = mouvement;
+    }
+        
 
 	/**
 	 * @param name

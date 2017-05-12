@@ -308,7 +308,13 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
 
     @Override
     public void update(Object o) {
-        
+        /*this.layeredPane = new JLayeredPane();		
+        this.chessBoardGuiContainer = new JPanel();	
+        this.drawGrid();
+
+        // Ajout des écouteurs pour écouter les évènements souris
+        layeredPane.addMouseListener(this);
+        layeredPane.addMouseMotionListener(this);*/
         this.drawGrid();
         LinkedList<PieceIHMs> pieces = (LinkedList<PieceIHMs>) o;
         Iterator<PieceIHMs> piecesIterator = pieces.iterator();

@@ -3,7 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_4IRC/chessGame1516/model/PionNoir.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementFou.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Tour.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/PieceIHM.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/AbstractPiece.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/AbstractPion.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementReine.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementCavalier.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Game.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/PionBlanc.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Pieces.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Mouvement.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Echiquier.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Reine.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Roi.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Cavalier.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementPionBlanc.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementPion.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementPionNoir.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Fou.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/tools/ChessPiecesFactory.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementRoi.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/PieceIHMs.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/ChessGame.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/MouvementTour.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/PionNoir.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/model/Jeu.java</file>
+            <file>file:/Users/Rudy_DEAL/Desktop/Dyonisos%20V3.5/CPE%20Lyon/Cours/Semestre8_2017/COO/PROJET/COO_PROJET_PART2_4IRC/chessGame1516/tools/Introspection.java</file>
         </group>
     </open-files>
 </project-private>
