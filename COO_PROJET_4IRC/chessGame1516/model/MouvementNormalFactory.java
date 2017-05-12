@@ -5,30 +5,25 @@
  */
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Rudy_DEAL
  */
-public class MouvementNormalFactory implements AbstractMouvementFactory{
-    
-    //private static MouvementNormalFactory instance;
+public class MouvementNormalFactory extends AbstractMouvementFactory{
 
-    public MouvementNormalFactory() {}
-    
-    /*
-    public MouvementNormalFactory getInstance() {
-        if (instance == null) {
-            instance = new MouvementNormalFactory();
-        }
-        return this.instance;
-    }*/
-    
-    
-    
-
-    @Override
-    public Mouvement getMouvement() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public MouvementNormalFactory() {
+        this.mouvements = new HashMap<>();
+        this.mouvements.put(0,null);
+        this.mouvements.put(1,null);
+        this.mouvements.put(2,null);
+        this.mouvements.put(3,null);
+        this.mouvements.put(4,null);
+        this.mouvements.put(5,null);
+        this.mouvements.put(6,null);
+        this.mouvements.put(7,null);
     }
     
 }

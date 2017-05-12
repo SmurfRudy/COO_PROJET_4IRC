@@ -141,7 +141,7 @@ public abstract class AbstractPiece implements Pieces {
 	 */
 	public boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
 			boolean isCastlingPossible) {
-            return factory.getMouvement().isMoveOk(this.x, this.y, xFinal, yFinal, isCatchOk, isCastlingPossible, false);
+            return factory.getMouvement(this.x, this.getClass()).isMoveOk(this.x, this.y, xFinal, yFinal, isCatchOk, isCastlingPossible, false);
         }
 
 

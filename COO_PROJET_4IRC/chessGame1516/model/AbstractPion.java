@@ -28,7 +28,7 @@ public abstract class AbstractPion extends AbstractPiece  {
 	public boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
 			boolean isCastlingPossible) {
 	
-		return getFactory().getMouvement().isMoveOk(this.getX(), this.getY(), xFinal, yFinal, isCatchOk, isCastlingPossible, this.premierCoup);
+		return getFactory().getMouvement(this.getX(), this.getClass()).isMoveOk(this.getX(), this.getY(), xFinal, yFinal, isCatchOk, isCastlingPossible, this.premierCoup);
 	
 	}
 
