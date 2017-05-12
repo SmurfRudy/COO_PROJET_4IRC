@@ -17,7 +17,8 @@ public class Fou extends AbstractPiece {
 	public Fou(Couleur couleur_de_piece, Coord coord) {
 		super(couleur_de_piece, coord);
                 this.setMouvementByDefault(MouvementFou.getInstance());
-                this.setMouvement(MouvementFou.getInstance());
+                //this.setMouvement(MouvementFou.getInstance());
+                this.setMouvement(this.getMouvementForModeTempete().get(coord.x));
 	}
 
 	/* (non-Javadoc)

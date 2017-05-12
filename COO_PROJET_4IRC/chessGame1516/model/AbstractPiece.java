@@ -1,5 +1,8 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 
 /**
@@ -15,6 +18,12 @@ public abstract class AbstractPiece implements Pieces {
 	private Couleur couleur;
 	private Mouvement mouvementByDefault;
         private Mouvement mouvement;
+        
+    private static Map<Integer,Mouvement> mouvementForModeTempete =new HashMap<>();
+
+    public static Map<Integer, Mouvement> getMouvementForModeTempete() {
+        return mouvementForModeTempete;
+    }
         
 
     public Mouvement getMouvementByDefault() {
@@ -43,6 +52,15 @@ public abstract class AbstractPiece implements Pieces {
 		this.x = coord.x;
 		this.y = coord.y;
 		this.couleur=couleur;
+                this.mouvementForModeTempete.put(0,MouvementTour.getInstance());
+                this.mouvementForModeTempete.put(1,MouvementCavalier.getInstance());
+                this.mouvementForModeTempete.put(2,MouvementFou.getInstance());
+                this.mouvementForModeTempete.put(3,this.getMouvementByDefault());
+                this.mouvementForModeTempete.put(4,this.getMouvementByDefault());
+                this.mouvementForModeTempete.put(5,MouvementFou.getInstance());
+                this.mouvementForModeTempete.put(6,MouvementCavalier.getInstance());
+                this.mouvementForModeTempete.put(7,MouvementTour.getInstance());
+                
 	}
 
 	/* (non-Javadoc)
@@ -83,6 +101,7 @@ public abstract class AbstractPiece implements Pieces {
 		if(Coord.coordonnees_valides(x,y)){
 			this.x=x;
 			this.y=y;
+                        setMouvement(this.mouvementForModeTempete.get(this.x));
 			ret = true;
 		}
 		return ret;

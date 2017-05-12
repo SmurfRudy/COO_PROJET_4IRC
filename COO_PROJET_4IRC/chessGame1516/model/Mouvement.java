@@ -5,6 +5,9 @@
  */
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author Rudy_DEAL

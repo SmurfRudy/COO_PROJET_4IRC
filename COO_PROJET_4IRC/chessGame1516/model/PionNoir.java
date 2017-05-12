@@ -14,7 +14,8 @@ public class PionNoir extends AbstractPion{
     public PionNoir(Couleur couleur_de_piece, Coord coord) {
         super(couleur_de_piece, coord);
         this.setMouvementByDefault(MouvementPionNoir.getInstance());
-        this.setMouvement(MouvementPionNoir.getInstance());
+        //this.setMouvement(MouvementPionNoir.getInstance());
+        this.setMouvement(this.getMouvementForModeTempete().get(coord.x));
     }
     
 }
