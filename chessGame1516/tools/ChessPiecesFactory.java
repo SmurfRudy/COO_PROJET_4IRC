@@ -1,14 +1,10 @@
 package tools;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import model.AbstractMouvementFactory;
 
 import model.Coord;
 import model.Couleur;
-import model.MouvementNormalFactory;
 import model.Pieces;
 
 /**
@@ -20,16 +16,11 @@ import model.Pieces;
  *
  */
 public class ChessPiecesFactory {
-        
-    private Map<Integer, AbstractMouvementFactory> modes;
 
 	/**
 	 * private pour ne pas instancier d'objets
 	 */
 	private ChessPiecesFactory() {
-            
-            modes =new HashMap();
-            modes.put(0,new MouvementNormalFactory());
 
 	}
 
@@ -37,7 +28,7 @@ public class ChessPiecesFactory {
 	 * @param pieceCouleur
 	 * @return liste de pi�ces de jeu d'�chec
 	 */
-	public static List<Pieces> newPieces(Couleur pieceCouleur,int choice){
+	public static List<Pieces> newPieces(Couleur pieceCouleur){
 
 		List<Pieces> pieces = null;
 		pieces = new LinkedList<Pieces>();

@@ -44,8 +44,8 @@ public class Jeu implements Game {
 	 * @param couleur
 	 * 
 	 */
-	public Jeu(Couleur couleur, int choice){
-		this.pieces = ChessPiecesFactory.newPieces(couleur, choice);
+	public Jeu(Couleur couleur){
+		this.pieces = ChessPiecesFactory.newPieces(couleur);
 		this.couleur = couleur;
 		isPieceToCatch = isMoveOk = false;
 	}
