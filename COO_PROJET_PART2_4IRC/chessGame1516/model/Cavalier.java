@@ -17,7 +17,10 @@ public class Cavalier extends AbstractPiece  {
 	public Cavalier( Couleur couleur_de_piece, Coord coord) {
 		super(couleur_de_piece, coord);
                 this.setMouvementByDefault(MouvementCavalier.getInstance());
-                this.setMouvement(MouvementCavalier.getInstance());
+                //this.setMouvement(MouvementCavalier.getInstance());
+                this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());
+                this.getMouvementForModeTempete().put(4,this.getMouvementByDefault());
+                this.setMouvement(this.getMouvementForModeTempete().get(coord.x));
 	}
 	/* (non-Javadoc)
 	 * @see model.AbstractPiece#isMoveOk(int, int)

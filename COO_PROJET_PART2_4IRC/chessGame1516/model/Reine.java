@@ -16,7 +16,10 @@ public class Reine extends AbstractPiece {
 	public Reine(Couleur couleur_de_piece, Coord coord) {
 		super(couleur_de_piece, coord);
                 this.setMouvementByDefault(MouvementReine.getInstance());
-                this.setMouvement(MouvementReine.getInstance());
+                //this.setMouvement(MouvementReine.getInstance());
+                this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());
+                this.getMouvementForModeTempete().put(4,this.getMouvementByDefault());
+                this.setMouvement(this.getMouvementForModeTempete().get(coord.x));
 	}
 
 	/* (non-Javadoc)
