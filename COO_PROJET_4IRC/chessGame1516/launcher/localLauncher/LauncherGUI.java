@@ -32,8 +32,8 @@ public class LauncherGUI {
 		JFrame frame = new JFrame();	
 		Dimension dim;
                 Object[] options = {"Normal", "Tempête"};
-                int choice = JOptionPane.showOptionDialog(frame, "Quel mode souhaitez-vous lancer", "Choix du mode", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-                System.out.println(choice);
+                int choice = JOptionPane.showOptionDialog(frame, "Quel mode souhaitez-vous lancer ?", "Choix du mode", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+
 		dim = new Dimension(700, 700);
 		
 		chessGame = new ChessGame();	
