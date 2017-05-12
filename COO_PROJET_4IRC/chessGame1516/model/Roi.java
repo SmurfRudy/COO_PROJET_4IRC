@@ -17,6 +17,8 @@ public class Roi extends AbstractPiece {
 		super(couleur_de_piece, coord);
                 this.setMouvementByDefault(MouvementRoi.getInstance());
                 //this.setMouvement(MouvementRoi.getInstance());
+                this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());
+                this.getMouvementForModeTempete().put(4,this.getMouvementByDefault());
                 this.setMouvement(this.getMouvementForModeTempete().get(coord.x));
 	}
 

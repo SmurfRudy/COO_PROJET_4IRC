@@ -19,6 +19,8 @@ public class Tour extends AbstractPiece {
 		super(couleur_de_piece, coord);
                 this.setMouvementByDefault(MouvementTour.getInstance());
                 //this.setMouvement(MouvementTour.getInstance());
+                this.getMouvementForModeTempete().put(3,this.getMouvementByDefault());
+                this.getMouvementForModeTempete().put(4,this.getMouvementByDefault());
                 this.setMouvement(this.getMouvementForModeTempete().get(coord.x));
 	}
 

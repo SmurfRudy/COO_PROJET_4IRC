@@ -19,11 +19,22 @@ public abstract class AbstractPiece implements Pieces {
 	private Mouvement mouvementByDefault;
         private Mouvement mouvement;
         
-    private static Map<Integer,Mouvement> mouvementForModeTempete =new HashMap<>();
+    private Map<Integer,Mouvement> mouvementForModeTempete =new HashMap<>();
 
-    public static Map<Integer, Mouvement> getMouvementForModeTempete() {
+    public Map<Integer, Mouvement> getMouvementForModeTempete() {
         return mouvementForModeTempete;
     }
+    public void setMouvementForModeTempete() {
+        this.mouvementForModeTempete.put(0,MouvementTour.getInstance());
+        this.mouvementForModeTempete.put(1,MouvementCavalier.getInstance());
+        this.mouvementForModeTempete.put(2,MouvementFou.getInstance());
+        //this.mouvementForModeTempete.put(3,this.getMouvementByDefault());
+        //this.mouvementForModeTempete.put(4,this.getMouvementByDefault());
+        this.mouvementForModeTempete.put(5,MouvementFou.getInstance());
+        this.mouvementForModeTempete.put(6,MouvementCavalier.getInstance());
+        this.mouvementForModeTempete.put(7,MouvementTour.getInstance());
+    }
+
         
 
     public Mouvement getMouvementByDefault() {
@@ -52,14 +63,7 @@ public abstract class AbstractPiece implements Pieces {
 		this.x = coord.x;
 		this.y = coord.y;
 		this.couleur=couleur;
-                this.mouvementForModeTempete.put(0,MouvementTour.getInstance());
-                this.mouvementForModeTempete.put(1,MouvementCavalier.getInstance());
-                this.mouvementForModeTempete.put(2,MouvementFou.getInstance());
-                this.mouvementForModeTempete.put(3,this.getMouvementByDefault());
-                this.mouvementForModeTempete.put(4,this.getMouvementByDefault());
-                this.mouvementForModeTempete.put(5,MouvementFou.getInstance());
-                this.mouvementForModeTempete.put(6,MouvementCavalier.getInstance());
-                this.mouvementForModeTempete.put(7,MouvementTour.getInstance());
+                setMouvementForModeTempete();
                 
 	}
 
@@ -140,6 +144,7 @@ public abstract class AbstractPiece implements Pieces {
 	 */
 	public abstract boolean isMoveOk(int xFinal, int yFinal, boolean isCatchOk,
 			boolean isCastlingPossible) ;
+
 
 }
 
