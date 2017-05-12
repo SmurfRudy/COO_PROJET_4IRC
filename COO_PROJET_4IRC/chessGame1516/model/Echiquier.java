@@ -35,10 +35,10 @@ public class Echiquier implements BoardGames {
 	private boolean isCastlingPossible; 
 
 
-	public Echiquier() {
+	public Echiquier(int choice) {
 		super();
-		this.jeuBlanc = new Jeu(Couleur.BLANC);
-		this.jeuNoir = new Jeu(Couleur.NOIR);
+		this.jeuBlanc = new Jeu(Couleur.BLANC, choice);
+		this.jeuNoir = new Jeu(Couleur.NOIR, choice);
 		this.jeuCourant = this.jeuBlanc;
 		this.jeuOppose = this.jeuNoir;
 		this.setMessage("Les blancs doivent commencer");
@@ -352,7 +352,7 @@ public class Echiquier implements BoardGames {
 
 
 	public static void main(String[] args) {
-		Echiquier e = new Echiquier();
+		Echiquier e = new Echiquier(0);
 		boolean isMoveOK = false;
 		
 		System.out.println("Test classe Echiquier\n");

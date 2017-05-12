@@ -16,8 +16,8 @@ import java.util.List;
 public class ChessGame extends Observable implements BoardGames{
     Echiquier echiquier;
     
-    public ChessGame(){
-        this.echiquier = new Echiquier();
+    public ChessGame(int choice){
+        this.echiquier = new Echiquier(choice);
     }
     
     
